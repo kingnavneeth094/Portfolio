@@ -1,0 +1,121 @@
+:root {
+  --black: #1d1d1d;
+  --white: #ffffff;
+  --pink: #ad619d;
+  --yellow: #f4e653;
+}
+
+.navbar {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0 20px;
+
+  &_name {
+    font-weight: bold;
+    font-size: 22px;
+    margin-left: 10px;
+  }
+
+  .menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  &_container {
+    display: flex;
+    align-items: center;
+
+    &_menu {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+
+      &_item {
+        position: relative;
+
+        &_link {
+          font-weight: bold;
+          color: inherit;
+          font-size: 22px;
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: inherit;
+          }
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          height: 3px;
+          width: 0;
+          background: transparent;
+          transition: all 0.5s ease;
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+        }
+
+        &:hover::after {
+          width: 100%;
+          background: var(--black);
+        }
+      }
+    }
+  }
+
+  &.dark-mode {
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  &.light-mode {
+    background-color: var(--white);
+    color: var(--black);
+
+    .navbar_container_menu_item_link:hover {
+      color: var(--black);
+    }
+
+    .navbar_container_menu_item_link:hover::after {
+      background: var(--black);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .navbar_container_menu {
+    flex-direction: column;
+    gap: 10px;
+    display: none;
+    width: 100%;
+
+    &_item_link {
+      font-size: 18px;
+    }
+
+    &.open {
+      display: flex;
+    }
+  }
+
+  .dark-mode-icon, .light-mode-icon {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+  }
+}

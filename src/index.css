@@ -1,0 +1,23 @@
+/* General styles for body */
+body.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark-mode {
+  background-color: #1d1d1d;
+  color: #ffffff;
+}
+
+/* Apply the dark and light mode styles to all sections */
+.section {
+  &.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  &.dark-mode {
+    background-color: #1d1d1d;
+    color: #ffffff;
+  }
+}

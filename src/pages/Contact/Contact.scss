@@ -1,0 +1,84 @@
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 110vh;
+  flex-direction: column;
+
+  h1 {
+    margin-bottom: 30px;
+    color: rgb(100, 140, 214);
+  }
+
+  .contact_container {
+    width: 100%; /* Adjust width to fill the available space */
+    max-width: 750px; /* Limit maximum width */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    animation: fadeInFromBottom 3s ease forwards; /* Apply the animation */
+    opacity: 1; /* Ensure visibility */
+    transition: max-width 0.3s ease; /* Smooth transition for width changes */
+
+    form {
+      display: grid;
+      gap: 15px;
+
+      label {
+        font-size: 26px;
+        color: #555;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        transition: border-color 0.3s ease;
+        font-size: 16px;
+
+        &:focus {
+          outline: none;
+          border-color: #5a5a5a;
+        }
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #20e07d;
+        }
+      }
+    }
+  }
+}
+
+/* Media Query for screens with a maximum width of 768px */
+@media screen and (max-width: 768px) {
+  .contact {
+    h1 {
+      font-size: 24px; /* Adjust heading font size for smaller screens */
+    }
+
+    .contact_container {
+      max-width: 100%; /* Adjust max-width to fill the available space */
+      padding: 10px; /* Reduce padding for smaller screens */
+    }
+  }
+}
